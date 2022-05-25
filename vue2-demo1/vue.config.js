@@ -12,7 +12,8 @@ module.exports = {
         // 如果请求地址以/api打头,就出触发代理机制
         '/authhost': {
           //将 http://localhost:9090 影射为/authhost。注意：必须用localhost，不能用ip。
-          target: 'http://localhost:9090',
+          //target: 'http://localhost:9090',
+         target: 'http://keycloakhost:9090',
           //    		secure: false,
           changeOrigin: true,
           pathRewrite: {

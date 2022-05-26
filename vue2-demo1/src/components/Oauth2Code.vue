@@ -1,9 +1,10 @@
 <template>
   <div>
     <h1>oauth2_code</h1>
-    <button @click="login">登录</button>
-    <button @click="getAuthCode">获取授权码</button>
-    <button @click="getAccessToken">获取access_token</button>
+    <button @click="login">1.登录</button>
+    <button @click="getAuthCode">2.获取authorization_code</button>
+    <button @click="getAccessToken">3.获取access_token</button>
+    <button @click="getApiData">4.获取接口数据</button>
     <div>
       <div>state:</div>
       <input style="width: 600px" v-model="authorization_code.state" />
@@ -20,6 +21,13 @@
         v-model="access_token"
       ></textarea>
     </div>
+    <div>
+      <div>api_data:</div>
+      <textarea
+        style="width: 600px; height: 300px"
+        v-model="api_data"
+      ></textarea>
+    </div>
   </div>
 </template>
 
@@ -32,6 +40,7 @@ export default {
     return {
       authorization_code: { state: "", code: "" },
       access_token: "",
+      api_data: {}
     };
   },
   methods: {
@@ -107,6 +116,23 @@ export default {
           sessionStorage.setItem("access_token", response.data.access_token);
           console.info(sessionStorage.getItem("access_token"));
         });
+    },
+    // 获取接口数据
+    getApiData() {
+      var self = this
+      const data_url = '/datahost/test/hello'
+      const access_token = sessionStorage.getItem('access_token')
+      console.info(access_token)
+      axios.get(data_url, {
+        headers: {
+          'Authorization': 'Bearer ' + access_token
+        }
+      }).then(function (response) {
+        console.info(response.data)
+        self.api_data = JSON.stringify(response.data)
+      }).catch(function (error) {
+        self.api_data = JSON.stringify(error)
+      })
     },
   },
 };

@@ -1,8 +1,8 @@
 <template>
   <div class="hello">
     <h1>oauth2_password</h1>
-    <button @click="getAccessToken">获取access_token</button>
-    <button @click="getApiData">获取接口数据</button>
+    <button @click="getAccessToken">1.获取access_token</button>
+    <button @click="getApiData">2.获取接口数据</button>
     <div>{{ api_data }}</div>
   </div>
 </template>
@@ -36,15 +36,15 @@ export default {
           'Content-Type': 'application/x-www-form-urlencoded'
         }
       }).then(function (response) {
-        localStorage.setItem('access_token', response.data.access_token)
-        console.info(localStorage.getItem('access_token'))
+        sessionStorage.setItem('access_token', response.data.access_token)
+        console.info(sessionStorage.getItem('access_token'))
       });
     },
     // 获取接口数据
     getApiData() {
       var self = this
       const data_url = '/datahost/test/hello'
-      const access_token = localStorage.getItem('access_token')
+      const access_token = sessionStorage.getItem('access_token')
       console.info(access_token)
       axios.get(data_url, {
         headers: {

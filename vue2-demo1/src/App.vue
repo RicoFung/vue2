@@ -4,7 +4,8 @@
     <router-link to="/">Home</router-link> |
     <router-link to="/Oauth2Password">Oauth2Password</router-link> |
     <router-link to="/Oauth2Code">Oauth2Code</router-link> |
-    <router-link to="/Oauth2CodePkce">Oauth2CodePkce</router-link>
+    <router-link to="/Oauth2CodePkce">Oauth2CodePkce</router-link> |
+    <router-link to="/SpringOauth2Code">SpringOauth2Code</router-link> |
     <router-view></router-view>
   </div>
 </template>

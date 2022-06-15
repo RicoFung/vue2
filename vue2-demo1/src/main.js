@@ -8,6 +8,7 @@ Vue.config.productionTip = false
 Vue.use(VueRouter);
 
 const router = new VueRouter({
+  mode: 'history', // 去除url中的‘#’号
   routes: Routes
 })
 

@@ -45,14 +45,14 @@ export default {
   data() {
     return {
       // 由于spring-authorization-server限制，必须用ip或域名访问（如：http://127.0.0.1:7090），不可用localhost
-      redirect_uri: window.location.protocol + '//' + window.location.host + this.$router.resolve({name: 'SpringOauth2CodeCallback'}).href,
+      // redirect_uri: window.location.protocol + '//' + window.location.host + this.$router.resolve({name: 'SpringOauth2CodeCallback'}).href,
+      redirect_uri: this.Oauth2.authorizationGrantType.authorizationCode.authorizeEndpoint.config.redirect_uri,
       authorization_code: { state: "", code: "" },
       access_token: "",
       api_data: {}
     };
   },
   mounted() {
-    
   },
   methods: {
     /**
@@ -60,32 +60,16 @@ export default {
      */
     loginDialog() {
       const querystring = require("querystring");
-      // location.href 此处必须显式写授权服务器域名，不可用vue.config.js中配置的proxy
-      let authcode_url = "http://auth-server:9000/oauth2/authorize?";
-      authcode_url += querystring.stringify({
-        client_id: "rico-client",
-        client_secret: "123",
-        response_type: "code",
-        scope: "openid test.read",
-        redirect_uri: this.redirect_uri,
-      });
-      // 执行跳转
-      // location.href = authcode_url;
-
-      // let authcode_url = this.$router.resolve({name: 'SpringOauth2CodeCallback', query: {data: "someData"}});
-      // let authcode_url = this.$router.resolve({name: 'SpringOauth2CodeCallback'});
+      let authorizeEndpoint = this.Oauth2.authorizationGrantType.authorizationCode.authorizeEndpoint;
+      let authcode_url = authorizeEndpoint.url + querystring.stringify(authorizeEndpoint.config);
       // 弹窗
-      // 高
       var iHeight = 800;
-      // 宽
-      var iWidth = 600;
-      // 获得窗口的垂直位置 
+      var iWidth = 600; 
       var iTop = (window.screen.availHeight - 30 - iHeight) / 2; 
-      // 获得窗口的水平位置 
       var iLeft = (window.screen.availWidth - 10 - iWidth) / 2; 
       window.open(authcode_url, '_blank', 'height=' + iHeight + ',innerHeight=' + iHeight + ',width=' + iWidth + ',innerWidth=' + iWidth + ',top=' + iTop + ',left=' + iLeft + ',status=no,toolbar=no,menubar=no,location=no,resizable=no,scrollbars=0,titlebar=no'); 
-       
     },
+
     /**
      * 登录
      */

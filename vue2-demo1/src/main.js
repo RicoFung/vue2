@@ -2,6 +2,9 @@ import Vue from 'vue'
 import App from './App.vue'
 import VueRouter from 'vue-router'
 import Routes from './routes'
+import Oauth2 from './oauth2'
+
+Vue.prototype.Oauth2 = Oauth2
 
 Vue.config.productionTip = false
 

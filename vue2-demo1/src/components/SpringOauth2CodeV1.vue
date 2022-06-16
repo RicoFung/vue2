@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>spring_oauth2_code_v1</h1>
+    <h1>SPRING_OAUTH2_CODE_V1</h1>
     <div>
       <button @click="login">1.登录</button>
       <button @click="getAuthCode">2.获取authorization_code</button>

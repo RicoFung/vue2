@@ -1,7 +1,7 @@
 import Home from '../components/Home.vue'
-import Oauth2Password from '../components/Oauth2Password.vue'
-import Oauth2Code from '../components/Oauth2Code.vue'
-import Oauth2CodePkce from '../components/Oauth2CodePkce.vue'
+import Oauth2Password from '../components/KeycloakOauth2Password.vue'
+import Oauth2Code from '../components/KeycloakOauth2Code.vue'
+import Oauth2CodePkce from '../components/KeycloakOauth2CodePkce.vue'
 import SpringOauth2CodeV1 from '../components/SpringOauth2CodeV1.vue'
 import SpringOauth2CodeV2 from '../components/SpringOauth2CodeV2.vue'
 // oauth2 回调页
@@ -14,18 +14,18 @@ export default [
     component: Home
   },
   {
-    path: '/oauth2-password',
-    name: 'Oauth2Password',
+    path: '/keycloak-oauth2-password',
+    name: 'KeycloakOauth2Password',
     component: Oauth2Password
   },
   {
-    path: '/oauth2-code',
-    name: 'Oauth2Code',
+    path: '/keycloak-oauth2-code',
+    name: 'KeycloakOauth2Code',
     component: Oauth2Code
   },
   {
-    path: '/oauth2-code-pkce',
-    name: 'Oauth2CodePkce',
+    path: '/keycloak-oauth2-code-pkce',
+    name: 'KeycloakOauth2CodePkce',
     component: Oauth2CodePkce
   },
   {

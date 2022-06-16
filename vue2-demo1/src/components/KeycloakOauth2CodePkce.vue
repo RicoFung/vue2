@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>oauth2_code_pkce</h1>
+    <h1>KEYCLOAK_OAUTH2_CODE_PKCE</h1>
     <button @click="genCodeVerifier">01.生成CodeVerifier</button>
     <button @click="genCodeChallenge">02.生成CodeChallenge</button>
     <button @click="login">1.登录</button>
@@ -50,7 +50,7 @@ import axios from "axios";
 import crypto from 'crypto';
 
 export default {
-  name: "Oauth2CodePkce",
+  name: "KeycloakOauth2CodePkce",
   data() {
     return {
       code_verifier: "",

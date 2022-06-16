@@ -5,9 +5,9 @@
     </div>
     <div id="router-link" class="show">
       <router-link to="/">home</router-link> |
-      <router-link to="/oauth2-password">oauth2-password</router-link> |
-      <router-link to="/oauth2-code">oauth2-code</router-link> |
-      <router-link to="/oauth2-code-pkce">oauth2-code-pkce</router-link> |
+      <router-link to="/keycloak-oauth2-password">keycloak-oauth2-password</router-link> |
+      <router-link to="/keycloak-oauth2-code">keycloak-oauth2-code</router-link> |
+      <router-link to="/keycloak-oauth2-code-pkce">keycloak-oauth2-code-pkce</router-link> |
       <router-link to="/spring-oauth2-code-v1">spring-oauth2-code-v1</router-link> |
       <router-link to="/spring-oauth2-code-v2">spring-oauth2-code-v2</router-link> |
     </div>

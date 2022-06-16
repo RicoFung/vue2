@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>oauth2_code</h1>
+    <h1>KEYCLOAK_OAUTH2_CODE</h1>
     <button @click="login">1.登录</button>
     <button @click="getAuthCode">2.获取authorization_code</button>
     <button @click="getAccessToken">3.获取access_token</button>
@@ -35,7 +35,7 @@
 import axios from "axios";
 
 export default {
-  name: "Oauth2Code",
+  name: "KeycloakOauth2Code",
   data() {
     return {
       authorization_code: { state: "", code: "" },

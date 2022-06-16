@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>spring_oauth2_code_v2</h1>
+    <h1>SPRING_OAUTH2_CODE_V2</h1>
     <div>
       <button @click="loginDialog">1.弹窗登录</button>
       <button @click="getApiData">2.获取接口数据</button>

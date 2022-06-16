@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-    <h1>oauth2_password</h1>
+    <h1>KEYCLOAK_OAUTH2_PASSWORD</h1>
     <button @click="getAccessToken">1.获取access_token</button>
     <button @click="getApiData">2.获取接口数据</button>
     <div>{{ api_data }}</div>
@@ -11,7 +11,7 @@
 import axios from 'axios';
 
 export default {
-  name: 'Oauth2Password',
+  name: 'KeycloakOauth2Password',
   props: {
     msg: String
   },

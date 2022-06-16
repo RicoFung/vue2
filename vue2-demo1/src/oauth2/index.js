@@ -3,7 +3,7 @@ const client_secret = '123'
 const response_type = 'code'
 const scope = 'openid test.read'
 const grant_type = 'authorization_code'
-const redirect_uri = window.location.protocol + '//' + window.location.host + '/SpringOauth2CodeCallback'
+const redirect_uri = window.location.protocol + '//' + window.location.host + '/oauth2/callback'
 
 export default {
     name: 'Oauth2',

@@ -1,16 +1,12 @@
 <template>
   <div>
-    <h1>spring_oauth2_code</h1>
-    <div>
-      <button @click="loginDialog">1.弹窗登录</button>
-    </div>
+    <h1>spring_oauth2_code_v1</h1>
     <div>
       <button @click="login">1.登录</button>
       <button @click="getAuthCode">2.获取authorization_code</button>
       <button @click="getAccessToken">3.获取access_token</button>
-    </div>
     <button @click="getApiData">4.获取接口数据</button>
-
+    </div>
     <div>
       <div>state:</div>
       <input style="width: 600px" v-model="authorization_code.state" />
@@ -41,12 +37,12 @@
 import axios from "axios";
 
 export default {
-  name: "SpringOauth2Code",
+  name: "SpringOauth2CodeV1",
   data() {
     return {
       // 由于spring-authorization-server限制，必须用ip或域名访问（如：http://127.0.0.1:7090），不可用localhost
       // redirect_uri: window.location.protocol + '//' + window.location.host + this.$router.resolve({name: 'SpringOauth2CodeCallback'}).href,
-      redirect_uri: this.Oauth2.authorizationGrantType.authorizationCode.authorizeEndpoint.config.redirect_uri,
+      // redirect_uri: this.Oauth2.authorizationGrantType.authorizationCode.authorizeEndpoint.config.redirect_uri,
       authorization_code: { state: "", code: "" },
       access_token: "",
       api_data: {}
@@ -55,21 +51,6 @@ export default {
   mounted() {
   },
   methods: {
-    /**
-     * 弹窗登录
-     */
-    loginDialog() {
-      const querystring = require("querystring");
-      let authorizeEndpoint = this.Oauth2.authorizationGrantType.authorizationCode.authorizeEndpoint;
-      let authcode_url = authorizeEndpoint.url + querystring.stringify(authorizeEndpoint.config);
-      // 弹窗
-      var iHeight = 800;
-      var iWidth = 600; 
-      var iTop = (window.screen.availHeight - 30 - iHeight) / 2; 
-      var iLeft = (window.screen.availWidth - 10 - iWidth) / 2; 
-      window.open(authcode_url, '_blank', 'height=' + iHeight + ',innerHeight=' + iHeight + ',width=' + iWidth + ',innerWidth=' + iWidth + ',top=' + iTop + ',left=' + iLeft + ',status=no,toolbar=no,menubar=no,location=no,resizable=no,scrollbars=0,titlebar=no'); 
-    },
-
     /**
      * 登录
      */

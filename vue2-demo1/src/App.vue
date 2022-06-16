@@ -1,12 +1,19 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/Oauth2Password">Oauth2Password</router-link> |
-    <router-link to="/Oauth2Code">Oauth2Code</router-link> |
-    <router-link to="/Oauth2CodePkce">Oauth2CodePkce</router-link> |
-    <router-link to="/SpringOauth2Code">SpringOauth2Code</router-link> |
-    <router-view></router-view>
+    <div id="logo" class="show">
+      <img alt="Vue logo" src="./assets/logo.png">
+    </div>
+    <div id="router-link" class="show">
+      <router-link to="/">home</router-link> |
+      <router-link to="/oauth2-password">oauth2-password</router-link> |
+      <router-link to="/oauth2-code">oauth2-code</router-link> |
+      <router-link to="/oauth2-code-pkce">oauth2-code-pkce</router-link> |
+      <router-link to="/spring-oauth2-code-v1">spring-oauth2-code-v1</router-link> |
+      <router-link to="/spring-oauth2-code-v2">spring-oauth2-code-v2</router-link> |
+    </div>
+    <div id="router-view">
+      <router-view></router-view>
+    </div>
   </div>
 </template>
 
@@ -22,5 +29,12 @@
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+.show {
+  display: inline;
+}
+.hide {
+  display: none;
 }
 </style>

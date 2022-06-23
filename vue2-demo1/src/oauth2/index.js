@@ -36,6 +36,18 @@ export default {
                     "Authorization": "Basic " + Buffer.from(client_id + ':' + client_secret).toString('base64')
                 },
                 access_token: '' // 访问令牌(jwt)，授权成功后回写
+            },
+            // logout
+            logoutEndpoint: {
+                // 此处必须显式写授权服务器域名，不可用vue.config.js中配置的proxy（使用：window.open/location.href）
+                url: 'http://auth-server:9000/logout?',
+                config: {
+                    client_id: client_id,
+                    client_secret: client_secret,
+                    response_type: response_type,
+                    scope: scope,
+                    redirect_uri: redirect_uri,
+                }
             }
         },
         // 密码模式将废弃

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>spring_oauth2_code_callback</h1>
+    <h1>spring_oauth2_code_pkce_callback</h1>
     <button @click="getCode">1.返回authorization_code</button>
     <button @click="getAccessToken">2.获取access_token</button>
     <div>
@@ -21,8 +21,9 @@
 </template>
 
 <script>
+
 export default {
-  name: "Callback",
+  name: "CallbackPkce",
   data() {
     return {
       // 授权码
@@ -38,12 +39,12 @@ export default {
       // 自动获取 code 成功后，自动获取 access_token
       var self = this
       // 1. 取 code
-      let r = this.AuthorizationCode.getCode(function(code) {
+      let r = this.AuthorizationCodePkce.getCode(function(code) {
         self.code = code
       })
       // 2. 取 access_token
       if (r == true) {
-        this.AuthorizationCode.token(function(access_token) {
+        this.AuthorizationCodePkce.token(function(access_token) {
           self.access_token = access_token
         })
       }
@@ -52,14 +53,14 @@ export default {
     // 手动获取 code
     getCode() {
       var self = this
-      this.AuthorizationCode.getCode(function(code) {
+      this.AuthorizationCodePkce.getCode(function(code) {
         self.code = code
       })
     },
     // 手动获取 access_token
     getAccessToken() {
       var self = this
-      this.AuthorizationCode.token(function(access_token) {
+      this.AuthorizationCodePkce.token(function(access_token) {
         self.access_token = access_token
       })
     }

@@ -1,11 +1,14 @@
 import Home from '../components/Home.vue'
+// keycloak sample
 import Oauth2Password from '../components/KeycloakOauth2Password.vue'
 import Oauth2Code from '../components/KeycloakOauth2Code.vue'
 import Oauth2CodePkce from '../components/KeycloakOauth2CodePkce.vue'
-import SpringOauth2CodeV1 from '../components/SpringOauth2CodeV1.vue'
-import SpringOauth2CodeV2 from '../components/SpringOauth2CodeV2.vue'
-// oauth2 回调页
+// spring-authorization-server sample
+import SpringOauth2Code from '../components/SpringOauth2Code.vue'
+import SpringOauth2CodePkce from '../components/SpringOauth2CodePkce.vue'
+// spring-authorization-server sample redirect page
 import Oauth2Callback from '../oauth2/Callback.vue'
+import Oauth2CallbackPkce from '../oauth2/CallbackPkce.vue'
 
 export default [
   {
@@ -29,18 +32,23 @@ export default [
     component: Oauth2CodePkce
   },
   {
-    path: '/spring-oauth2-code-v1',
-    name: 'SpringOauth2CodeV1',
-    component: SpringOauth2CodeV1
-  },
-  {
-    path: '/spring-oauth2-code-v2',
-    name: 'SpringOauth2CodeV2',
-    component: SpringOauth2CodeV2
+    path: '/spring-oauth2-code',
+    name: 'SpringOauth2Code',
+    component: SpringOauth2Code
   },
   {
     path: '/oauth2/callback',
     name: 'Oauth2Callback',
     component: Oauth2Callback
+  },
+  {
+    path: '/spring-oauth2-code-pkce',
+    name: 'SpringOauth2CodePkce',
+    component: SpringOauth2CodePkce
+  },
+  {
+    path: '/oauth2/callback-pkce',
+    name: 'Oauth2CallbackPkce',
+    component: Oauth2CallbackPkce
   }
 ]

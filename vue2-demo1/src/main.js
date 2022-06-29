@@ -2,9 +2,11 @@ import Vue from 'vue'
 import App from './App.vue'
 import VueRouter from 'vue-router'
 import Routes from './routes'
-import Oauth2 from './oauth2'
+import AuthorizationCode from './oauth2/authorization-code'
+import AuthorizationCodePkce from './oauth2/authorization-code-pkce'
 
-Vue.prototype.Oauth2 = Oauth2
+Vue.prototype.AuthorizationCode = AuthorizationCode
+Vue.prototype.AuthorizationCodePkce = AuthorizationCodePkce
 
 Vue.config.productionTip = false
 

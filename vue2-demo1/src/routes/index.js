@@ -1,11 +1,11 @@
-import Home from '../components/Home.vue'
+import Home from '../views/Home.vue'
 // keycloak sample
-import Oauth2Password from '../components/KeycloakOauth2Password.vue'
-import Oauth2Code from '../components/KeycloakOauth2Code.vue'
-import Oauth2CodePkce from '../components/KeycloakOauth2CodePkce.vue'
+import Oauth2Password from '../views/KeycloakOauth2Password.vue'
+import Oauth2Code from '../views/KeycloakOauth2Code.vue'
+import Oauth2CodePkce from '../views/KeycloakOauth2CodePkce.vue'
 // spring-authorization-server sample
-import SpringOauth2Code from '../components/SpringOauth2Code.vue'
-import SpringOauth2CodePkce from '../components/SpringOauth2CodePkce.vue'
+import SpringOauth2Code from '../views/SpringOauth2Code.vue'
+import SpringOauth2CodePkce from '../views/SpringOauth2CodePkce.vue'
 // spring-authorization-server sample redirect page
 import Oauth2Callback from '../oauth2/Callback.vue'
 import Oauth2CallbackPkce from '../oauth2/CallbackPkce.vue'

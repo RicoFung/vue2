@@ -1,4 +1,5 @@
 import axios from "axios"
+import dialogUtil from "../utils/dialog-util";
 import pkceUtil from './pkce-util.js'
 
 // require querystring
@@ -99,7 +100,7 @@ export default {
             redirect_uri: redirect_uri,
         }
         url += querystring.stringify(config)
-        // 弹窗
-        dialogUtil.closeWindow()
+        // 弹窗   
+        dialogUtil.openWindow({url: url})
     }
 }

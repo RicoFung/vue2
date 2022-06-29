@@ -92,11 +92,7 @@ export default {
             redirect_uri: redirect_uri,
         }
         url += querystring.stringify(config)
-        // 弹窗
-        var iHeight = 600;
-        var iWidth = 800; 
-        var iTop = (window.screen.availHeight - 30 - iHeight) / 2; 
-        var iLeft = (window.screen.availWidth - 10 - iWidth) / 2; 
-        window.open(url, '_blank', 'height=' + iHeight + ',innerHeight=' + iHeight + ',width=' + iWidth + ',innerWidth=' + iWidth + ',top=' + iTop + ',left=' + iLeft + ',status=no,toolbar=no,menubar=no,location=no,resizable=no,scrollbars=0,titlebar=no')  
+        // 弹窗   
+        dialogUtil.openWindow({url: url})
     }
 }

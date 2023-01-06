@@ -44,9 +44,16 @@ export default {
      *  */ 
     getApiData() {
       var self = this
-      const url = '/springdatahost/test/hi'
+      const url = '/springdatahost/api/v3/tbdemo/getOne'
       const access_token = localStorage.getItem('access_token')
-      axios.get(url, {
+      axios.post(url, {
+        "dynamicColumns": [
+          "tcRowid",
+          "tcCode",
+          "tcName"
+        ],
+        "tcRowid": 91403
+      }, {
         headers: {
           'Authorization': 'Bearer ' + access_token
         }

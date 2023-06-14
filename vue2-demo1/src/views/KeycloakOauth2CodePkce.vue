@@ -90,13 +90,9 @@ export default {
      */
     login() {
       const querystring = require("querystring");
-      // 回调url
-      let redirect_uri =
-        window.location.protocol +
-        "//" +
-        window.location.host +
-        "/#" +
-        this.$route.path;
+      // 回调url(必须与keycloak配置一致)
+      // let redirect_uri = window.location.protocol + "//" + window.location.host + "/#" + this.$route.path
+      let redirect_uri = window.location.protocol + "//" + "10.12.77.66:7090" + "/" + this.$route.path
       // 此处必须显式写授权服务器域名，不可用vue.config.js中配置的proxy
       let authcode_url =
         "http://keycloakhost:9090/realms/realm_test_01/protocol/openid-connect/auth?";
@@ -129,7 +125,8 @@ export default {
     getAccessToken() {
       var self = this;
       // 回调url
-      let redirect_uri = window.location.protocol + "//" + window.location.host + "/#" + this.$route.path
+      // let redirect_uri = window.location.protocol + "//" + window.location.host + "/#" + this.$route.path
+      let redirect_uri = window.location.protocol + "//" + "10.12.77.66:7090" + "/" + this.$route.path
       let code = sessionStorage.getItem("code")
       let code_verifier = localStorage.getItem("code_verifier")
       console.info("code_verifier => " + code_verifier)
